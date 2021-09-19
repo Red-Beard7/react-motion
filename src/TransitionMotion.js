@@ -10,15 +10,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import type {
-  ReactElement,
+  DidLeave,
   PlainStyle,
-  Velocity,
-  TransitionStyle,
+  ReactElement,
   TransitionPlainStyle,
+  TransitionProps,
+  TransitionStyle,
+  Velocity,
   WillEnter,
   WillLeave,
-  DidLeave,
-  TransitionProps,
 } from './Types';
 
 const msPerFrame = 1000 / 60;
@@ -232,7 +232,6 @@ export default class TransitionMotion extends React.Component<
     defaultStyles: PropTypes.arrayOf(
       PropTypes.shape({
         key: PropTypes.string.isRequired,
-        data: PropTypes.any,
         style: PropTypes.objectOf(PropTypes.number).isRequired,
       }),
     ),
@@ -241,7 +240,6 @@ export default class TransitionMotion extends React.Component<
       PropTypes.arrayOf(
         PropTypes.shape({
           key: PropTypes.string.isRequired,
-          data: PropTypes.any,
           style: PropTypes.objectOf(
             PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
           ).isRequired,
